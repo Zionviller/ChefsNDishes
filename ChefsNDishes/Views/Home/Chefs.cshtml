@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "All Chefs";
+}
+@using ChefsNDishes.Models
+@model List<Chef>
+<h1>Chefs & <a href="/Dishes">Dishes</a></h1>
+<a href="/AddChef">Add a Chef</a>
+<p>Only the best chefs!</p>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th># of Dishes</th>
+        </tr>
+    </thead>
+    @foreach(Chef chef in Model)
+    {
+        <tr>
+            <td>@chef.LastName, @chef.FirstName</td>
+            <td>@chef.Age</td>
+            <td>@chef.Dishes.Count</td>
+        </tr>
+    }
+</table>
